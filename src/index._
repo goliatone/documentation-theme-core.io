@@ -67,11 +67,6 @@
     <div class='page flex'>
       <header id='split-left' class='page__header fs0'>
         <div class='inner'>
-          <div class="page__headline">
-            <h1 class='mb0 no-anchor page__title'><%- config['project-name'] %></h1>
-            <p class='mb1 page__subtitle'><code><%- config['project-version'] %></code></p>
-          </div>
-
           <a id="menu-toggle" href="#prime-nav" title="Show/hide menu" class="menu-toggle"><span>Browse</span></a>
           
           <nav class="page__prime-nav" id="prime-nav">
