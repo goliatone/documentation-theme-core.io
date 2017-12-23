@@ -4,12 +4,13 @@
   <meta charset='utf-8' />
   <title><%- config['project-name'] %> <%- config['project-version'] %> | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <!-- <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
   <link href='assets/github.css' type='text/css' rel='stylesheet' />
   <link href='assets/split.css' type='text/css' rel='stylesheet' />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" /> -->
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body class='documentation m0 docs midnight-mode layout-app'>
@@ -69,10 +70,10 @@
         <div class='inner'>
           <a id="menu-toggle" href="#prime-nav" title="Show/hide menu" class="menu-toggle"><span>Browse</span></a>
           
-          <nav class="page__prime-nav" id="prime-nav">
+          <nav class="side-menu sticky" id="prime-nav">
             <input placeholder='Filter' id='filter-input' class='col12 block input' type='text' />
 
-            <h2 class='mb1 page__subtitle'>Contents</h2>
+            <!-- <h2 class='mb1 page__subtitle'>Contents</h2> -->
             <div id='toc'>
               <ul class='ppn__menu'>
                 <% docs.forEach(function(doc) { %>
@@ -138,10 +139,6 @@
                   </li>
                 <% }) %>
               </ul>
-
-              <div class='mt1 h6 quiet'>
-                <a class='page__subtitle' href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
-              </div>
             </div>
           </div>
         </nav>
