@@ -67,7 +67,7 @@
     <div class='cols'>
       <div id='split-left' class='col-2'>
         <div class='inner'>
-          <a id="menu-toggle" href="#prime-nav" title="Show/hide menu" class="menu-toggle"><span>Browse</span></a>
+          <!-- <a id="menu-toggle" href="#prime-nav" title="Show/hide menu" class="menu-toggle"><span>Browse</span></a> -->
           
           <nav class="page__prime-nav" id="prime-nav">
             <input placeholder='Filter' id='filter-input' class='col12 block input' type='text' />
