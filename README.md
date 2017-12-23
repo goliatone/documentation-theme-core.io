@@ -22,9 +22,18 @@ $ documentation serve --format html --theme node_modules/documentation-theme-cor
 
 To build:
 
-    $ npm run build
+```
+$ npm run build
+```
 
 To build and watch:
 
-    $ npm run watch
+```
+$ npm run watch
+```
 
+To build the docs and watch live:
+
+```
+$npm run docs
+```
