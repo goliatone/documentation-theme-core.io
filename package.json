@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel -D src -d lib",
     "watch": "babel -D src -d lib --watch",
+    "docs": "documentation serve --shallow --watch --theme lib/  src/",
     "prepublish": "npm run build"
   },
   "repository": {
