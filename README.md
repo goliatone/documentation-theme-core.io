@@ -20,20 +20,8 @@ $ documentation serve --format html --theme node_modules/documentation-theme-cor
 
 ### Development
 
-To build:
+To build the docs, watch, and serve live:
 
 ```
-$ npm run build
-```
-
-To build and watch:
-
-```
-$ npm run watch
-```
-
-To build the docs and watch live:
-
-```
-$npm run docs
+$npm run serve
 ```
