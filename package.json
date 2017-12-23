@@ -1,6 +1,6 @@
 {
   "name": "documentation-theme-core.io",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "core.io Theme for documentation.js",
   "main": "lib/index.js",
   "scripts": {
