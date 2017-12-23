@@ -9,8 +9,35 @@
   <link href='assets/github.css' type='text/css' rel='stylesheet' />
   <link href='assets/split.css' type='text/css' rel='stylesheet' />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" />
+
 </head>
 <body class='documentation m0'>
+
+    <header class="row row-vCentered">
+  
+      <!-- HEADER LOGO -->
+      <div class="logo">
+        <a href="index.html"><img src="/img/logo/c_core.svg" alt="Core.io" title="Core.io"/></a>
+      </div><!-- END HEADER LOGO -->
+
+      <!-- Header Navigation Bar -->
+      <nav id="main-nav" class="nav-bar-1">
+        <div class="menu-item">
+          <a href="index.html">Features</a> 
+        </div>
+        <div class="menu-item">
+          <a href="quickstart.html">Quickstart</a> 
+        </div>
+        <div class="menu-item">
+          <a href="documentation.html">Documentation</a> 
+        </div>
+        <div class="menu-item">
+          <a href="modules.html">Modules</a> 
+        </div>
+      </nav><!-- END Header Navigation Bar -->
+
+    </header><!-- END SECTION HEADER -->
+
   <div class='page flex'>
     <header id='split-left' class='page__header fs0'>
       <div class='inner'>
