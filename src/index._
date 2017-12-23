@@ -64,8 +64,8 @@
       <hr class="sticky hr-light">
     </div>
 
-    <div class='page flex'>
-      <header id='split-left' class='page__header fs0'>
+    <div class='cols'>
+      <div id='split-left' class='col-2'>
         <div class='inner'>
           <a id="menu-toggle" href="#prime-nav" title="Show/hide menu" class="menu-toggle"><span>Browse</span></a>
           
@@ -145,9 +145,9 @@
             </div>
           </div>
         </nav>
-      </header>
+      </div>
 
-      <main id='split-right' class='page__body relative overflow-auto'>
+      <main id='split-right' class='col-2'>
         <% docs.forEach(function(s) { %>
           <% if (s.kind !== 'note') { %>
             <%= renderSection({
@@ -161,15 +161,6 @@
         <% }) %>
       </main>
 
-      <footer class="page__footer" role="contentinfo">
-        <div class="inner">
-          <p>
-            <a href="https://developmentseed.org" title="Visit Development Seed website"><img src="assets/images/devseed-logo-symbol.svg" alt="Development Seed logo symbol" width="512" height="152"> <span>Development Seed</span></a>
-            <small>2017</small>
-          </p>
-        </div>
-      </footer>
-        
     </div>
 
   <script src='assets/anchor.js'></script>
