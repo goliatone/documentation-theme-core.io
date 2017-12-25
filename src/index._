@@ -73,7 +73,8 @@
           <nav id="prime-nav">
             <input id='filter-input' placeholder='Filter' type='text' />
 
-            <ul>
+            <div id="toc">
+              <ul>
                 <% docs.forEach(function(doc) { %>
                   <% var hasMembers = doc.members.static.length || doc.members.instance.length %>
                   <li class="menu-item"><a href='#<%=slug(doc.namespace)%>'><%- doc.name %></a>
@@ -115,7 +116,8 @@
                   <% } %>
                   </li>
                 <% }) %>
-            </ul>
+              </ul>
+            </div>
           </div>
         </nav>
       </div>
