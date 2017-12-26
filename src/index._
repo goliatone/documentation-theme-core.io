@@ -13,7 +13,9 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
-<body>
+<body class='docs midnight-mode layout-app'>
+
+  <div class="highlight-bar"></div>
 
   <div class="docs midnight-mode layout-app">
     <header class="row row-vCentered">
