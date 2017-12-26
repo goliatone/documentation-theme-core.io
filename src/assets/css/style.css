@@ -22,3 +22,7 @@
   padding: 8px 0;
   line-height: 30px
 }
+
+.content section .code-line {
+  margin: 16px 0;
+}
