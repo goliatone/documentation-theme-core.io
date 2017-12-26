@@ -22,3 +22,19 @@
   padding: 8px 0;
   line-height: 30px
 }
+
+.bg-menu {
+  width: 2000px;
+  height: 77px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #2C2E31
+}
+
+.nav-bar-2,
+.label,
+hr {
+  z-index: 2;
+}
