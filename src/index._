@@ -17,128 +17,165 @@
 
   <div class="highlight-bar"></div>
 
-  <header class="row row-vCentered">
+  <div class="docs midnight-mode layout-app">
+    <header class="row row-vCentered">
 
-    <!-- HEADER LOGO -->
-    <div class="logo">
-      <a href="index.html"><img src="assets/img/logo/c_core.svg" alt="Core.io" title="Core.io"/></a>
-    </div><!-- END HEADER LOGO -->
+      <!-- HEADER LOGO -->
+      <div class="logo">
+        <a href="index.html"><img src="assets/img/logo/c_core.svg" alt="Core.io" title="Core.io"/></a>
+      </div><!-- END HEADER LOGO -->
 
-    <!-- Header Navigation Bar -->
-    <nav id="main-nav" class="nav-bar-1">
-      <div class="menu-item">
-        <a href="index.html">Features</a>
-      </div>
-      <div class="menu-item">
-        <a href="quickstart.html">Quickstart</a>
-      </div>
-      <div class="menu-item">
-        <a href="documentation.html">Documentation</a>
-      </div>
-      <div class="menu-item">
-        <a href="modules.html">Modules</a>
-      </div>
-    </nav><!-- END Header Navigation Bar -->
+      <!-- Header Navigation Bar -->
+      <nav id="main-nav" class="nav-bar-1">
+        <div class="menu-item">
+          <a href="index.html">Features</a>
+        </div>
+        <div class="menu-item">
+          <a href="quickstart.html">Quickstart</a>
+        </div>
+        <div class="menu-item">
+          <a href="documentation.html">Documentation</a>
+        </div>
+        <div class="menu-item">
+          <a href="modules.html">Modules</a>
+        </div>
+      </nav><!-- END Header Navigation Bar -->
+    </header><!-- END SECTION HEADER -->
 
-  </header><!-- END SECTION HEADER -->
+    <div class="content">
 
-  <div class="content">
+      <div class="sticky nav">
+        <div class="row row-vCentered">
+          <!-- Documentation Navigation Bar -->
+          <nav id="docs-nav" class="nav-bar-2">
+            <div class="menu-item">
+              <a href="guide.html">Guide</a>
+            </div>
+            <div class="menu-item">
+              <a href="api.html">API</a>
+            </div>
+            <div class="menu-item">
+              <a href="examples.html">Examples</a>
+            </div>
+          </nav><!-- END Documentation Navigation Bar -->
 
-    <div class="sticky nav">
-      <div class="row row-vCentered">
-        <!-- Documentation Navigation Bar -->
-        <nav id="docs-nav" class="nav-bar-2">
-          <div class="menu-item">
-            <a href="guide.html">Guide</a>
+          <div class="label highlight">
+            <span><%- config['project-version'] %></span>
           </div>
-          <div class="menu-item">
-            <a href="api.html">API</a>
-          </div>
-          <div class="menu-item">
-            <a href="examples.html">Examples</a>
-          </div>
-        </nav><!-- END Documentation Navigation Bar -->
+        </div>
 
-        <div class="label highlight">
-          <span><%- config['project-version'] %></span>
+        <hr class="sticky hr-light">
+      </div>
+
+      <div class='cols'>
+        <div id='split-left' class='col-2'>
+          <div class='side-menu sticky'>
+            <a id="menu-toggle" href="#prime-nav" title="Show/hide menu" class="menu-toggle"><span>Browse</span></a>
+
+            <nav id="prime-nav">
+              <input id='filter-input' placeholder='Filter' type='text' />
+
+              <div id="toc">
+                <ul>
+                  <% docs.forEach(function(doc) { %>
+                    <% var hasMembers = doc.members.static.length || doc.members.instance.length %>
+                    <li class="menu-item"><a href='#<%=slug(doc.namespace)%>'><%- doc.name %></a>
+                    <% if (hasMembers) { %>
+                    <div class='submenu'>
+                      <% if (doc.members.static && doc.members.static.length) { %>
+                      <ul>
+                        <li class="menu-item-submenu"><span>Static members</span></li>
+                        <% doc.members.static.forEach(function(member) { %>
+                        <li><a href='#<%=slug(member.namespace)%>'>.<%- member.name %></a></li>
+                        <% }) %>
+                      </ul>
+                      <% } %>
+                      <% if (doc.members.instance && doc.members.instance.length) { %>
+                      <ul>
+                        <li class='menu-item-submenu'><span>Instance members</span></li>
+                        <% doc.members.instance.forEach(function(member) { %>
+                        <li><a href='#<%=slug(member.namespace)%>'>#<%- member.name %></a></li>
+                        <% }) %>
+                      </ul>
+                      <% } %>
+                      <% if (doc.members.inner && doc.members.inner.length) { %>
+                      <ul>
+                        <li class='h5'><span>Inner members</span></li>
+                        <% doc.members.inner.forEach(function(member) { %>
+                        <li><a href='#<%=slug(member.namespace)%>'>#<%- member.name %></a></li>
+                        <% }) %>
+                      </ul>
+                      <% } %>
+                      <% if (doc.members.events && doc.members.events.length) { %>
+                      <ul>
+                        <li class='h5'>Events</li>
+                        <% doc.members.events.forEach(function(member) { %>
+                        <li><a href='#<%=slug(member.namespace)%>'>ⓔ <%- member.name %></a></li>
+                        <% }) %>
+                      </ul>
+                      <% } %>
+                    </div>
+                    <% } %>
+                    </li>
+                  <% }) %>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <main id='split-right' class='col-2'>
+          <% docs.forEach(function(s) { %>
+            <% if (s.kind !== 'note') { %>
+              <%= renderSection({
+                section: s,
+                renderSection: renderSection,
+                renderSectionList: renderSectionList
+              }) %>
+            <% } else { %>
+              <div class='keyline-top-not py2'><%=renderNote({ note: s })%></div>
+            <% } %>
+          <% }) %>
+        </main>
+      </div>
+    </div>
+
+    <footer>
+      <div class="cols cols-centered">
+
+        <div class="col-3">
+          <div class="footer-logo">
+            <a href="index.html"><img src="assets/img/logo/mosca.svg" title="Core.io" alt="Core.io"/></a>
+          </div>
+
+          <div class="footer-menu">
+            <a href="index.html">Features</a>
+            <a href="quickstart.html">Quickstart</a>
+            <a href="documentation.html">Documentation</a>
+            <a href="modules.html">Modules</a>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="footer-releases">
+            <p>Latest Release: 0.2.8 (Jun 01, 2017)</p>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="footer-github">
+            <a href="#" class="row row-vCentered">
+              <img src="assets/img/icons/github-icon-2.png" alt="Core.io in Github" title="Github" />Github
+            </a>
+          </div>
         </div>
       </div>
 
-      <hr class="sticky hr-light">
-    </div>
-
-    <div class='cols'>
-      <div id='split-left' class='col-2'>
-        <div class='side-menu sticky'>
-          <a id="menu-toggle" href="#prime-nav" title="Show/hide menu" class="menu-toggle"><span>Browse</span></a>
-
-          <nav id="prime-nav">
-            <input id='filter-input' placeholder='Filter' type='text' />
-
-            <div id="toc">
-              <ul>
-                <% docs.forEach(function(doc) { %>
-                  <% var hasMembers = doc.members.static.length || doc.members.instance.length %>
-                  <li class="menu-item"><a href='#<%=slug(doc.namespace)%>'><%- doc.name %></a>
-                  <% if (hasMembers) { %>
-                  <div class='submenu'>
-                    <% if (doc.members.static && doc.members.static.length) { %>
-                    <ul>
-                      <li class="menu-item-submenu"><span>Static members</span></li>
-                      <% doc.members.static.forEach(function(member) { %>
-                      <li><a href='#<%=slug(member.namespace)%>'>.<%- member.name %></a></li>
-                      <% }) %>
-                    </ul>
-                    <% } %>
-                    <% if (doc.members.instance && doc.members.instance.length) { %>
-                    <ul>
-                      <li class='menu-item-submenu'><span>Instance members</span></li>
-                      <% doc.members.instance.forEach(function(member) { %>
-                      <li><a href='#<%=slug(member.namespace)%>'>#<%- member.name %></a></li>
-                      <% }) %>
-                    </ul>
-                    <% } %>
-                    <% if (doc.members.inner && doc.members.inner.length) { %>
-                    <ul>
-                      <li class='h5'><span>Inner members</span></li>
-                      <% doc.members.inner.forEach(function(member) { %>
-                      <li><a href='#<%=slug(member.namespace)%>'>#<%- member.name %></a></li>
-                      <% }) %>
-                    </ul>
-                    <% } %>
-                    <% if (doc.members.events && doc.members.events.length) { %>
-                    <ul>
-                      <li class='h5'>Events</li>
-                      <% doc.members.events.forEach(function(member) { %>
-                      <li><a href='#<%=slug(member.namespace)%>'>ⓔ <%- member.name %></a></li>
-                      <% }) %>
-                    </ul>
-                    <% } %>
-                  </div>
-                  <% } %>
-                  </li>
-                <% }) %>
-              </ul>
-            </div>
-          </div>
-        </nav>
+      <div class="row row-centered copyright">
+        <p>Copyright &#169; 2017 goliatone. The contents of this page are licensed MIT license.</p>
       </div>
-
-      <main id='split-right' class='col-2'>
-        <% docs.forEach(function(s) { %>
-          <% if (s.kind !== 'note') { %>
-            <%= renderSection({
-              section: s,
-              renderSection: renderSection,
-              renderSectionList: renderSectionList
-            }) %>
-          <% } else { %>
-            <div class='keyline-top-not py2'><%=renderNote({ note: s })%></div>
-          <% } %>
-        <% }) %>
-      </main>
-
-    </div>
+    </footer>
+  </div>
 
   <script src='assets/anchor.js'></script>
   <script src='assets/split.js'></script>
