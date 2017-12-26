@@ -5,3 +5,20 @@
 #filter-input {
   display: none;
 }
+
+.content section {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #3F3F41;
+}
+
+.content section p {
+  margin: 16px 0;
+}
+
+.content section .quiet {
+  opacity: .7;
+  margin-top: 8px;
+  padding: 8px 0;
+  line-height: 30px
+}
