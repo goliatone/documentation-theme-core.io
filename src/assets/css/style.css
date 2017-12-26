@@ -30,3 +30,7 @@
 .content section .code-line {
   margin: 16px 0;
 }
+
+.display-none {
+  display: none;
+}
