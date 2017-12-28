@@ -80,9 +80,14 @@
                 <ul>
                   <% docs.forEach(function(doc) { %>
                     <% var hasMembers = doc.members.static.length || doc.members.instance.length %>
-                    <li class="menu-item"><a href='#<%=slug(doc.namespace)%>'><%- doc.name %></a>
+                    <li class="menu-item"><a
+                      href='#<%=slug(doc.namespace)%>'
+                      class="<% if (hasMembers) { %> toggle-sibling<% } %>"
+                      ><%- doc.name %>
+                      <% if (hasMembers) { %><span class='icon'>▸</span><% } %>
+                    </a>
                     <% if (hasMembers) { %>
-                    <div class='submenu'>
+                    <div class='submenu toggle-target display-none'>
                       <% if (doc.members.static && doc.members.static.length) { %>
                       <ul>
                         <li class="menu-item-submenu"><span>Static members</span></li>
