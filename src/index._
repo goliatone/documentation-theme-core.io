@@ -84,7 +84,7 @@
                       <% if (hasMembers) { %><span class='icon'>▸</span><% } %>
                     </a>
                     <% if (hasMembers) { %>
-                    <div class='submenu'>
+                    <div class='submenu toggle-target display-none'>
                       <% if (doc.members.static && doc.members.static.length) { %>
                       <ul>
                         <li class="menu-item-submenu title"><span>Static members</span></li>

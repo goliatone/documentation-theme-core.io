@@ -27,3 +27,7 @@
   opacity: .7;
   font-size: 14px;
 }
+
+.display-none {
+  display: none;
+}
