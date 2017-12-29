@@ -52,6 +52,6 @@ hr {
   margin: 16px 0;
 }
 
-.display-none {
-  display: none;
+.anchorjs-link {
+  margin-top: 3px;
 }
