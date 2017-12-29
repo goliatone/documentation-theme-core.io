@@ -169,7 +169,7 @@
 
         if (this.options.placement === 'left') {
           anchor.style.position = 'absolute';
-          anchor.style.marginLeft = '-1em';
+          anchor.style.marginLeft = '-.8em';
           anchor.style.paddingRight = '0.5em';
           elements[i].insertBefore(anchor, elements[i].firstChild);
         } else {

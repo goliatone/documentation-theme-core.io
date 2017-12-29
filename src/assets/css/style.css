@@ -51,3 +51,7 @@ hr {
 .content section .code-line {
   margin: 16px 0;
 }
+
+.anchorjs-link {
+  margin-top: 3px;
+}
