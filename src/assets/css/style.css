@@ -12,6 +12,10 @@
   background-color: #3F3F41;
 }
 
+.content h2, .content h3 {
+  font-weight: bold;
+}
+
 .content section p {
   margin: 16px 0;
 }
@@ -26,6 +30,10 @@
 .menu-item-submenu.title {
   opacity: .7;
   font-size: 14px;
+}
+
+.content section .code-line {
+  margin: 16px 0;
 }
 
 .display-none {
