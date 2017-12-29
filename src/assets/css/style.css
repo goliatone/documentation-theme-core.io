@@ -55,3 +55,7 @@ hr {
 .anchorjs-link {
   margin-top: 3px;
 }
+
+.display-none {
+  display: none;
+}
