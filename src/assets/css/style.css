@@ -12,6 +12,10 @@
   background-color: #3F3F41;
 }
 
+.content h2, .content h3 {
+  font-weight: bold;
+}
+
 .content section p {
   margin: 16px 0;
 }
@@ -21,6 +25,10 @@
   margin-top: 8px;
   padding: 8px 0;
   line-height: 30px
+}
+
+.content section .code-line {
+  margin: 16px 0;
 }
 
 .display-none {
