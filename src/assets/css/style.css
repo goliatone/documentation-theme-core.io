@@ -59,3 +59,7 @@ hr {
 .display-none {
   display: none;
 }
+
+.element-member {
+  margin-bottom: 5px;
+}
