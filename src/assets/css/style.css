@@ -63,3 +63,7 @@ hr {
 .element-member {
   margin-bottom: 5px;
 }
+
+.toggle-sibling:hover {
+  cursor: pointer;
+}
