@@ -7,7 +7,7 @@
     </h3>
     <% } %>
     <% if (section.context && section.context.github) { %>
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='<%= section.context.github.url %>'>
+      <a class='quiet' href='<%= section.context.github.url %>'>
       <span><%= section.context.github.path %></span>
       </a>
     <% } %>
@@ -52,25 +52,25 @@
 	    <%= md(param.description, true) %>
           </div>
           <% if (param.properties && param.properties.length) { %>
-          <table class='mt1 mb2 fixed-table h5 col-12'>
+          <table>
             <colgroup>
               <col width='30%' />
               <col width='70%' />
             </colgroup>
             <thead>
-              <tr class='bold fill-light'>
+              <tr>
                 <th>Name</th>
                 <th>Description</th>
               </tr>
             </thead>
-            <tbody class='mt1'>
+            <tbody>
               <% param.properties.forEach(function(property) { %>
                 <tr>
-                  <td class='break-word'><span class='code bold'><%- property.name %></span> <code class='quiet'><%= formatType(property.type) %></code>
+                  <td><span><%- property.name %></span> <code class='quiet'><%= formatType(property.type) %></code>
                   <% if (property.default) { %>
                     (default <code><%- property.default %></code>)
                   <% } %></td>
-                  <td class='break-word'><span><%= md(property.description, true) %></span></td>
+                  <td><span><%= md(property.description, true) %></span></td>
                 </tr>
               <% }) %>
             </tbody>
@@ -127,7 +127,7 @@
     <div class='quiet'>Example</div>
     <% section.examples.forEach(function(example) { %>
       <% if (example.caption) { %><p><%= md(example.caption) %></p><% } %>
-      <pre class='p1 overflow-auto round fill-light'><%= highlight(example.description) %></pre>
+      <pre><%= highlight(example.description) %></pre>
     <% }) %>
   <% } %>
 
