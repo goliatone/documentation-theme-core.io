@@ -43,9 +43,18 @@ hr {
   z-index: 2;
 }
 
+.submenu ul  {
+  margin-top: 18px;
+}
+
+.submenu ul:first-of-type {
+  margin-top: 0;
+}
+
 .menu-item-submenu.title {
-  opacity: .7;
   font-size: 14px;
+  opacity: .7;
+  margin-left: -18px;
 }
 
 .content section .code-line {
