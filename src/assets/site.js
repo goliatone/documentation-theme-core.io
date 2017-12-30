@@ -50,9 +50,21 @@ function scrollIntoView(targetId) {
   }
 }
 
+function showTargetContent(targetId) {
+    if(targetId) {
+      var hashTarget = document.getElementById(targetId);
+      if(hashTarget.classList.contains('element-member')) {
+        hashTarget.getElementsByClassName('toggle-target')[0].classList.remove('display-none');
+      }
+    }
+}
+
 function gotoCurrentTarget() {
-  showHashTarget(location.hash.substring(1));
-  scrollIntoView(location.hash.substring(1));
+  var id = location.hash.substring(1);
+  showHashTarget(id);
+  scrollIntoView(id);
+  showTargetContent(id);
+  window.scrollBy(0, -140);
 }
 
 window.addEventListener('hashchange', gotoCurrentTarget);
