@@ -1,6 +1,6 @@
 <div>
   <% members.forEach(function(member) { %>
-    <div class='element-member' id='<%- slug(member.namespace) %>'>
+    <div id='<%- slug(member.namespace) %>' class='element-member'>
       <div class="toggle-sibling">
         <div>
             <a class='icon'>▸</a>

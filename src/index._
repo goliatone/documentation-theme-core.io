@@ -137,7 +137,7 @@
                 renderSectionList: renderSectionList
               }) %>
             <% } else { %>
-              <div class='keyline-top-not py2'><%=renderNote({ note: s })%></div>
+              <div><%=renderNote({ note: s })%></div>
             <% } %>
           <% }) %>
         </main>
