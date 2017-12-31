@@ -1,12 +1,12 @@
 /* INDEX ----------------------------------------------------- INDEX
- * 
+ *
  * 1. Resets
  * 2. General Classes
  * 3. Skins (colors)
  * 4. Font definitions (fonts)
  * 5. Layouts (dims)
  * 6. Elements
- * 7. Styleguide                                        
+ * 7. Styleguide
  *                                                                   */
 /* RESETS --------------------------------------------------- RESETS */
 /* so frame doesn't float around when x-scrolling on pad */
@@ -95,9 +95,6 @@ img {
   position: sticky; }
 
 /* LAYOUT_APP STYLE----------------------------------------------- */
-.layout-app {
-  min-height: 100vh;
-  overflow: hidden; }
   .layout-app header,
   .layout-app .content {
     max-width: 1225px;
@@ -1059,7 +1056,14 @@ p code, li code {
     margin-bottom: 36px; }
 
 /* MODULES PAGE -------------------------------------------------- */
+.modules {
+  min-height: 100vh;
+  overflow: hidden; }
+  .modules .content {
+    min-height: calc(100vh - 542px); }
+
 .posts {
+  display: none;
   margin-top: 70px; }
   .posts .message-box {
     display: none;
