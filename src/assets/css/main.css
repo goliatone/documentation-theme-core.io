@@ -129,8 +129,8 @@ img {
               flex-direction: column; }
       .layout-app footer .footer-menu a {
         padding-bottom: 10px; }
-    .layout-app footer .footer-releases p {
-      margin-bottom: 5px; }
+      .layout-app footer .footer-releases p {
+        margin-bottom: 5px; }
     .layout-app footer .copyright {
       margin-top: 32px;
       margin-left: -33px; }
@@ -355,7 +355,7 @@ img {
       -o-transition: all 0.3s ease;
       transition: all 0.3s ease; }
   .midnight-mode .label.highlight {
-    color: #ffffff;
+    color: #2C2E31;
     border-color: #00d8d8;
     background-color: #00d8d8; }
   .midnight-mode .label.green {
@@ -636,8 +636,7 @@ code {
 /* ------------------------------------ LABELS */
 .label {
   font-family: "Montserrat-Bold", Helvetica, sans-serif;
-  font-size: 10px;
-  text-transform: uppercase; }
+  font-size: 10px; }
 
 /* ---------------------------------- FOOTNOTE */
 .copyright {
@@ -1201,6 +1200,18 @@ p code, li code {
   margin-top: 13.9px;
   z-index: 1; }
 .docs .nav-bar-2 .menu-item {
+  z-index: 2; }
+.docs .bg-menu {
+  width: 2000px;
+  height: 125px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #2C2E31; }
+.docs .nav-bar-2,
+.docs .label,
+.docs hr {
   z-index: 2; }
 .docs .side-menu {
   width: 255px;
