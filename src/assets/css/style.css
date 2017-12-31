@@ -1,47 +1,47 @@
-.content section {
+.api section {
   margin-bottom: 20px;
   padding: 20px;
   background-color: #3F3F41;
 }
 
-.content h2, .content h3 {
+.api h2, .api h3 {
   font-weight: bold;
 }
 
-.content section p {
+.api section p {
   margin: 16px 0;
 }
 
-.content section .quiet {
+.api section .quiet {
   opacity: .7;
   margin-top: 8px;
   padding: 8px 0;
   line-height: 30px
 }
 
-.submenu {
+.api section .code-line {
+  margin: 16px 0;
+}
+
+.api .submenu {
   margin: 12px 0 0 14px;
 }
 
-.submenu ul  {
+.api .submenu ul  {
   margin-top: 14px;
 }
 
-.submenu ul:first-of-type {
+.api .submenu ul:first-of-type {
   margin-top: 0;
 }
 
-.menu-item-submenu.title {
+.api .menu-item-submenu.title {
   font-size: 14px;
   opacity: .7;
   margin-left: -18px;
 }
 
-.content section .code-line {
-  margin: 16px 0;
-}
-
-.anchorjs-link {
+.api .anchorjs-link {
   margin-top: 3px;
 }
 
@@ -49,10 +49,10 @@
   display: none;
 }
 
-.element-member {
+.api .element-member {
   margin-bottom: 5px;
 }
 
-.toggle-sibling:hover {
+.api .toggle-sibling:hover {
   cursor: pointer;
 }
