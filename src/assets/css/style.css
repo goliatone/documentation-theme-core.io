@@ -23,6 +23,10 @@
   margin: 16px 0;
 }
 
+.api section .prose code {
+  font-weight: bold;
+}
+
 .api .submenu {
   margin: 12px 0 0 14px;
 }
