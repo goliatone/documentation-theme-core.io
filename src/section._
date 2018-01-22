@@ -17,7 +17,7 @@
     <%= md(section.description) %>
   </div>
 
-  <div class='code-line'><%= signature(section) %></div>
+  <div class='code-line'><code><%= signature(section) %></code></div>
   <% if (section.type) { %>
     <p>
       Type:
@@ -28,10 +28,10 @@
     <p>
       Extends
       <% if (section.augments) { %>
-        <%= section.augments.map(function(tag) {
+        <code><%= section.augments.map(function(tag) {
 	  return autolink(tag.name);
 	}).join(', ') %>
-      <% } %>
+      <% } %></code>
     </p>
   <% } %>
 
