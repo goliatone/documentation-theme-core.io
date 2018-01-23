@@ -17,7 +17,7 @@
     <%= md(section.description) %>
   </div>
 
-  <div class='code-line'><%= signature(section) %></div>
+  <div class='code-line'><code><%= signature(section) %></code></div>
   <% if (section.type) { %>
     <p>
       Type:
@@ -28,10 +28,10 @@
     <p>
       Extends
       <% if (section.augments) { %>
-        <%= section.augments.map(function(tag) {
+        <code><%= section.augments.map(function(tag) {
 	  return autolink(tag.name);
 	}).join(', ') %>
-      <% } %>
+      <% } %></code>
     </p>
   <% } %>
 
@@ -54,8 +54,8 @@
           <% if (param.properties && param.properties.length) { %>
           <table>
             <colgroup>
-              <col width='30%' />
-              <col width='70%' />
+              <col width='40%' />
+              <col width='60%' />
             </colgroup>
             <thead>
               <tr>
@@ -66,7 +66,7 @@
             <tbody>
               <% param.properties.forEach(function(property) { %>
                 <tr>
-                  <td><span><%- property.name %></span> <code class='quiet'><%= formatType(property.type) %></code>
+                  <td><code><%- property.name %></code> <code class='quiet'><%= formatType(property.type) %></code>
                   <% if (property.default) { %>
                     (default <code><%- property.default %></code>)
                   <% } %></td>

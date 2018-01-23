@@ -60,3 +60,20 @@
 .api .toggle-sibling:hover {
   cursor: pointer;
 }
+
+.api table {
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 16px;
+  text-align: left;
+}
+
+.api table thead,
+.api table td {
+    border: 1px solid #2C2E31;
+}
+
+.api table th,
+.api table td {
+  padding: 8px;
+}
