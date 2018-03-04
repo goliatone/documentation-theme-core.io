@@ -8,14 +8,10 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
-<body class="docs">
-
-  <div class="highlight-bar"></div>
+<body class="docs highlight-bar">
 
   <header class="main-header row row-vCentered">
-
     <a class="logo" href="/"><img src="assets/img/logo/c_core.svg" alt="Core.io" title="Core.io"/></a>
-
     <nav id="main-nav" class="nav-bar-1">
       <ul>
         <li class="menu-item"><a href="/">Features</a></li>
@@ -24,20 +20,17 @@
         <li class="menu-item"><a href="/modules.html">Modules</a></li>
       </ul>
     </nav>
-
   </header>
 
   <main class="content api">
 
     <div class="sticky nav">
-      <div class="bg-menu"></div>
       <div class="row row-vCentered">
         <nav id="docs-nav" class="nav-bar-2">
           <ul>
             <li class="menu-item"><a href="/documentation/guide/index.html">Guide</a></li>
             <li class="menu-item"><a href="/documentation/api/index.html">API</a></li>
             <li class="menu-item"><a href="/documentation/examples/index.html">Examples</a></li>
-
           </ul>
         </nav>
         <span class="label highlight">0.2.8</span>
@@ -46,76 +39,74 @@
     </div>
 
     <div class="row">
-      <div id='split-left' class='col-2'>
-        <div class='side-menu sticky'>
-          <nav id="prime-nav">
-            <div id="toc">
-              <ul>
-              <% docs.forEach(function(doc) { %>
-                <% var hasMembers = doc.members.static.length || doc.members.instance.length %>
-                <li class="menu-item"><a
-                  href='#<%=slug(doc.namespace)%>'
-                  class="<% if (hasMembers) { %> toggle-sibling<% } %>">
-                  <%- doc.name %>
-                  <% if (hasMembers) { %><span class='icon'>▸</span><% } %>
-                  </a>
-                  <% if (hasMembers) { %>
-                  <div class='submenu toggle-target display-none'>
-                  <% if (doc.members.static && doc.members.static.length) { %>
-                    <ul>
-                      <li class="menu-item-submenu title"><span>Static members</span></li>
-                      <% doc.members.static.forEach(function(member) { %>
-                      <li class="menu-item-submenu"><a href='#<%=slug(member.namespace)%>'>.<%- member.name %></a></li>
-                      <% }) %>
-                    </ul>
-                    <% } %>
-                    <% if (doc.members.instance && doc.members.instance.length) { %>
-                    <ul>
-                      <li class='menu-item-submenu title'><span>Instance members</span></li>
-                      <% doc.members.instance.forEach(function(member) { %>
-                      <li class="menu-item-submenu"><a href='#<%=slug(member.namespace)%>'>#<%- member.name %></a></li>
-                      <% }) %>
-                    </ul>
-                    <% } %>
-                    <% if (doc.members.inner && doc.members.inner.length) { %>
-                    <ul>
-                      <li class='menu-item-submenu title'><span>Inner members</span></li>
-                      <% doc.members.inner.forEach(function(member) { %>
-                      <li class="menu-item-submenu"><a href='#<%=slug(member.namespace)%>'>#<%- member.name %></a></li>
-                      <% }) %>
-                    </ul>
-                    <% } %>
-                    <% if (doc.members.events && doc.members.events.length) { %>
-                    <ul>
-                      <li class='menu-item-submenu title'>Events</li>
-                      <% doc.members.events.forEach(function(member) { %>
-                      <li class="menu-item-submenu"><a href='#<%=slug(member.namespace)%>'>ⓔ <%- member.name %></a></li>
-                      <% }) %>
-                    </ul>
-                    <% } %>
-                  </div>
-                  <% } %>
-                  </li>
-                <% }) %>
-              </ul>
-            </div>
-          </div>
+      <div id='split-left'>
+        <nav id="docs-side-menu" class='side-menu sticky'>
+          <ul>
+            <% docs.forEach(function(doc) { %>
+            <% var hasMembers = doc.members.static.length || doc.members.instance.length %>
+            <li class="menu-item"><a
+                href='#<%=slug(doc.namespace)%>'
+                class="<% if (hasMembers) { %> toggle-sibling<% } %>">
+                <%- doc.name %>
+                <% if (hasMembers) { %><span class='icon'>▸</span><% } %>
+              </a>
+              <% if (hasMembers) { %>
+              <div class='submenu toggle-target display-none'>
+              <% if (doc.members.static && doc.members.static.length) { %>
+                <ul>
+                  <li class="menu-item-submenu title"><span>Static members</span></li>
+                  <% doc.members.static.forEach(function(member) { %>
+                  <li class="menu-item-submenu"><a href='#<%=slug(member.namespace)%>'>.<%- member.name %></a></li>
+                  <% }) %>
+                </ul>
+                <% } %>
+                <% if (doc.members.instance && doc.members.instance.length) { %>
+                <ul>
+                  <li class='menu-item-submenu title'><span>Instance members</span></li>
+                  <% doc.members.instance.forEach(function(member) { %>
+                  <li class="menu-item-submenu"><a href='#<%=slug(member.namespace)%>'>#<%- member.name %></a></li>
+                  <% }) %>
+                </ul>
+                <% } %>
+                <% if (doc.members.inner && doc.members.inner.length) { %>
+                <ul>
+                  <li class='menu-item-submenu title'><span>Inner members</span></li>
+                  <% doc.members.inner.forEach(function(member) { %>
+                  <li class="menu-item-submenu"><a href='#<%=slug(member.namespace)%>'>#<%- member.name %></a></li>
+                  <% }) %>
+                </ul>
+                <% } %>
+                <% if (doc.members.events && doc.members.events.length) { %>
+                <ul>
+                  <li class='menu-item-submenu title'>Events</li>
+                  <% doc.members.events.forEach(function(member) { %>
+                  <li class="menu-item-submenu"><a href='#<%=slug(member.namespace)%>'>ⓔ <%- member.name %></a></li>
+                  <% }) %>
+                </ul>
+                <% } %>
+              </div>
+              <% } %>
+            </li>
+            <% }) %>
+          </ul>
         </nav>
       </div>
 
-      <main id='split-right' class='col-2'>
-        <% docs.forEach(function(s) { %>
+      <div id='split-right'>
+        <main id="api" class='main-txt'>
+          <% docs.forEach(function(s) { %>
           <% if (s.kind !== 'note') { %>
-            <%= renderSection({
+          <%= renderSection({
               section: s,
               renderSection: renderSection,
               renderSectionList: renderSectionList
-            }) %>
+              }) %>
           <% } else { %>
-            <div><%=renderNote({ note: s })%></div>
+          <div><%=renderNote({ note: s })%></div>
           <% } %>
-        <% }) %>
-      </main>
+          <% }) %>
+        </main>
+      </div>
     </div>
   </main>
 
@@ -124,7 +115,6 @@
       <div class="row row-centered">
         <div>
           <a class="footer-logo" href="/"><img src="assets/img/logo/mosca.svg" title="Core.io" alt="Core.io"/></a>
-
           <nav class="footer-menu">
             <ul>
               <li class="menu-item"><a href="/">Features</a></li>

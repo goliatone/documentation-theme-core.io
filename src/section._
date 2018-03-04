@@ -84,7 +84,7 @@
     <div class='quiet'>Properties</div>
     <div>
       <% section.properties.forEach(function(property) { %>
-          <code'><%- property.name%></code> <code class='quiet'>(<%= formatType(property.type) %>)</code>
+          <code><%- property.name%></code> <code class='quiet'>(<%= formatType(property.type) %>)</code>
           <% if (property.default) { %>
             (default <code><%- property.default %></code>)
           <% } %><% if (property.description) {

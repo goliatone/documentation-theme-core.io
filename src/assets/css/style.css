@@ -12,6 +12,10 @@
   margin: 16px 0;
 }
 
+.api section h3 {
+  margin-top: 0;
+}
+
 .api section .quiet {
   opacity: .7;
   margin-top: 8px;
